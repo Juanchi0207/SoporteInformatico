@@ -26,37 +26,64 @@ inputCodigoP.addEventListener("input",validarCodigoP);
 */
 var intervalo = setInterval (cambiar, 3000)
 var contador = 1;
-
+/*
 function anterior(){
-    $("#img"+(contador)).fadeOut();
+    $("#img"+(contador)).fadeOut(500);
     contador=contador-2;
     if(contador<1){
         contador=3;
     }
-    $("#img"+(contador)).fadeIn();
+    $("#img"+(contador)).fadeIn(1500);
     
 }
-
+*/
+function anterior(){
+    clearInterval(intervalo);
+    $("#img"+(contador)).css("display","none");
+    if(contador==1){
+        contador=3;
+    }
+    else{
+        contador=contador-1;
+    }
+    $("#img"+(contador)).css("display","block");
+    intervalo = setInterval (cambiar, 3000)
+}
+/*
 function siguiente(){
-    $("#img"+(contador)).fadeOut();
+    $("#img"+(contador)).fadeOut(500);
     if(contador==4){
         contador=1;
     }
-    $("#img"+(contador)).fadeIn();
+    $("#img"+(contador)).fadeIn(1500);
     console.log("AFAF")
+}*/
+
+function siguiente(){
+   clearInterval(intervalo);
+    console.log("#img"+(contador));
+    $("#img"+(contador)).css("display","none");
+    if(contador==3){
+        contador=1;
+    }
+    else{
+        contador +=1;
+    }
+    $("#img"+(contador)).css("display","block");
+    console.log("AFAF")
+    intervalo = setInterval (cambiar, 3000)
 }
 
 function cambiar(){
-    var temp=contador-1;
-    if (temp==0){
-        temp=3;
-    }
-    $("#img"+temp).fadeOut();
-    $("#img"+contador).fadeIn();
-    contador++;
-    if(contador==4){
+    $("#img"+(contador)).css("display","none");
+    if (contador==3){
         contador=1;
     }
+    else{
+        contador +=1;
+    }
+    $("#img"+contador).css("display","block");
+   
 }
 
 
