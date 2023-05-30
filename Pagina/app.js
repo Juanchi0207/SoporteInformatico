@@ -15,14 +15,14 @@ app.get("/insertar", (req, res) => {
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'Alumno',
+  user     : 'alumno',
   password : 'alumnoipm',
   database : 'prueba'/*base de datos literalmente*/ 
   /*crear la base de datos en sql*/ 
 });
   connection.connect();
- 
-connection.query('insert into prueba values(/*llenar*/); ', function (error, results, fields) {
+ var consulta= 'insert into prueba values(/*nombre, apellido, usuario, ciudad, codigo postal*/); '
+connection.query(consulta, function (error, results, fields) {
   if (error) throw error;
   else console.log("Todo bien");
  

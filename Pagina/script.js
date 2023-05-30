@@ -14,6 +14,7 @@ inputCiudad.addEventListener("input",validarCiudad);
 const inputCodigoP=document.getElementById("validationCustom05");
 inputCodigoP.addEventListener("input",validarCodigoP);
 
+var enviar= false;
 var intervalo = setInterval (cambiar, 3000)
 var contador = 1;
 
@@ -133,5 +134,16 @@ function enviarFormulario(e){
     if (enviar == false){
         e.preventDefault();
     }
+    obtenerDatos();
+}
+
+function obtenerDatos(){
+    var nombre=getElementById("validationCustom01").value;
+    var apellido=getElementById("validationCustom02").value;
+    var usuario=getElementById("validationCustomUsername").value;
+    var ciudad=getElementById("validationCustom03").value;
+    var codigoPostal =getElementById( "validationCustom03").value;
+    console.log(nombre);
+    console.log(codigoPostal);
 }
 
