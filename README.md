@@ -1,1 +1,0 @@
-# Sampieri-Cerutti
